@@ -2,29 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-int sumOfDigits(int num) {
-    int sum = 0;
-    while (num > 0) {
-        sum += num % 10;
-        num /= 10;
-    }
-    return sum;
-}
 
-bool compareRows(const std::vector<int>& row1, const std::vector<int>& row2) {
-    int sum1 = 0, sum2 = 0;
-    for (int num : row1) {
-        sum1 += sumOfDigits(num);
-    }
-    for (int num : row2) {
-        sum2 += sumOfDigits(num);
-    }
-    return sum1 < sum2;
-}
-
-void sortMatrixRows(std::vector<std::vector<int>>& matrix) {
-    std::sort(matrix.begin(), matrix.end(), compareRows);
-}
 
 int main() {
    int n;
